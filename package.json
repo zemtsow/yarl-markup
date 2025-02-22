@@ -1,0 +1,15 @@
+{
+  "name": "yarl-markup",
+  "version": "0.0.1",
+  "description": "Future markup with new markup tags and rendered to html",
+  "keywords": [
+    "yarl-markup"
+  ],
+  "license": "MIT",
+  "author": "zemtsow",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
