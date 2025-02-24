@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./assets/semantic/semantic.min.css">
+    <title>Yarl Markup</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title__block">
+            <h1>Yarl Markup</h1>
+        </div>
+        <div class="ui form save__container">
+            <div class="field">
+                <label>File Name</label>
+                <input type="text" id="fileNameInput" placeholder="Enter file name" value="result">
+            </div>
+            <button class="ui primary button" id="saveHtmlButton">Save HTML</button>
+        </div>
+        <div class="ui grid">
+            <div class="eight wide column">
+                <form class="ui form">
+                    <div class="field">
+                        <label>Markup</label>
+                        <textarea id="markupInput"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="eight wide column">
+                <label>Result</label>
+                <div id="preview" class="ui segment"></div>
+            </div>
+        </div>
+        <div class="ui segment" id="yarl-docs">
+            <h3>Yarl Markup Documentation</h3>
+            <p><strong>Yarl Markup</strong> is a custom markup language that allows easy text formatting, quotes, links,
+                and images.</p>
+
+            <h4>📌 Text</h4>
+            <p>Plain text can be written without special characters.</p>
+
+            <h4>📌 Quotes</h4>
+            <pre>&gt; This is a quote  
+Another line in the quote  
+&lt;</pre>
+            <p>Will be converted to:</p>
+            <blockquote class="yarl-quote">
+                <p>This is a quote</p>
+                <p>Another line in the quote</p>
+            </blockquote>
+
+            <h4>📌 Links</h4>
+            <pre>!Google = https://www.google.com</pre>
+            <p>Will be converted to:</p>
+            <p><a href="https://www.google.com" target="_blank">Google</a></p>
+
+            <h4>📌 Images</h4>
+            <p><strong>Upload an image from your computer:</strong></p>
+            <pre>!img ></pre>
+            <p><strong>Add an image from a link:</strong></p>
+            <pre>!img = https://example.com/image.jpg</pre>
+            <p>Will be converted to:</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA4CAMAAABuU5ChAAAA+VBMVEX////pQjU0qFNChfT6uwU0f/O4zvs6gfSJr/j6twDoOisjePPoNSXpPjDrWU/oLRr+9vZ7pff/vAAUoUAkpEn0ran619b82pT7wgD+68j947H/+e7//PafvPm/0vuBw5Df7+P63tz3xcPxl5HnJQ7qUEXxj4n4z83zoJzqSz/vgXrucWrsY1r1tbHrSBPoOjbvcSr0kx74rRH80XntZC3xhSPmGRr86+r4sk/936EJcfPS3/yowvnbwVKjsTjx9f5urEjkuBu9tC+ErkJyvoRRpj2az6hWs23j6/0emX2z2btAiuI8k8AyqkE5nZU1pGxCiOxVmtHJ5M+PSt3WAAACGElEQVRIieWSa3fSQBCGk20CJRcW2AWKxgJtqCmieNdatV5SUtFq5f//GJeE7CXJJOT4TZ+PO+c58+7MaNr/SWd60mecTDs1pMFp28dODPZnZw/369TXseXqHNfCblDdte84krTDwUFFwnMnJyXm+bSsmZ/vlcb1+6A2x5C1xYeyPgIyJlhtYDjzjOYyZA3oFighLYxni8UMY6dCG/jy9KzTQfI8DXSnTNN0kcl1lNE9dlxYC8TnnEVmAJ02qHlPllyb58vgmQ2Np0tYgzGMo2ex6IKRihi1mPhcZyYuO8McL4yYl0vrrI6mJZpx9Or1mzqa10rFt8p7o5ArXh+lXutC8d6ZBdiXvH6PeyPFsw8KMBu8fsG9+3t473l9yD1vD+/BX3v1cgqv3lzE/8A9NCUK5sn33vugeN1DQTcVTbG/9M56H+lEAzg2d54t7iW5657xCdEx5PF+B9Lj9oO9z4hBgIZX6YyaXfmZaV9QQkU781h+Hra+7jQaFv6Or8RW3r1rhErES641D9XKigox8jJaQxyAfZOpIQm6kiuT6BvfujqVuEpkkY43u+d1RBBF35v55aVJidKSEBRFiJAk/+0PM3NjgjFFMLc/WVYzlzImLBPprzvzrlBjHUmZSH8DmqatS0QSZtcjTxUBWSlZw1bckhaYlISTcm1rIqKolJJxtRWnXUVscTFsjWFFwoy7WTM2+zX69/gDaLcy7SET9nsAAAAASUVORK5CYII="
+                class="yarl-image" alt="Image Example" />
+
+            <h4>📌 Saving HTML</h4>
+            <p>Enter a file name, then click <strong>"Save HTML"</strong> to download the final HTML document.</p>
+        </div>
+
+    </div>
+
+    <footer class="footer__container">
+        <p>Powered by <a href="https://github.com/zemtsow" target="_blank">zemtsow</a> - all rights reserved.</p>
+        <div>Version <span id="version"></span></div>
+    </footer>
+
+    <script type="module" src="./engine/index.js"></script>
+</body>
+
+</html>
